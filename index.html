@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <form name="contact" method="POST" data-netlify="true" enctype="multipart/form-data"></form>
+    <title>ฟอร์มสั่งงานกราฟฟิก</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #4CAF50;
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="date"], textarea, select, input[type="file"] {
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .checkbox-group, .radio-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .form-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 14px 40px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Section Styling */
+        .section {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .box {
+            width: 100%;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-btn button {
+            width: 100%;
+        }
+
+        /* Label and input styling */
+        input[type="text"], input[type="date"], textarea, select, input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #f7f7f7;
+            margin-top: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .section {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .box {
+                width: 100%;
+            }
+        }
+        /* Footer styling */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ฟอร์มสั่งงานกราฟฟิก</h1>
+
+        <div class="section">
+            <!-- งานประชาสัมพันธ์ -->
+            <div class="box">
+                <h3>งานประชาสัมพันธ์</h3>
+
+                <div class="form-group">
+                    <label>เนื้อหางาน</label>
+                    <textarea name="content" placeholder="กรุณาพิมพ์เนื้อหางาน" rows="5"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>ไฟล์สำหรับประชาสัมพันธ์ (อัพโหลด)</label>
+                    <input type="file" name="file_upload">
+                </div>
+
+                <div class="form-group">
+                    <label>ช่องทางประชาสัมพันธ์</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="channels" value="Facebook"> Facebook</label>
+                        <label><input type="checkbox" name="channels" value="Website"> Website</label>
+                        <label><input type="checkbox" name="channels" value="Line"> Line</label>
+                    </div>
+                </div>
+
+                <div class="form-btn">
+                    <button type="submit">ส่งงาน</button>
+                </div>
+            </div>
+
+            <!-- งานออกแบบกราฟฟิก -->
+            <div class="box">
+                <h3>งานออกแบบกราฟฟิก</h3>
+
+                <div class="form-group">
+                    <label>ชื่อ-นามสกุล</label>
+                    <input type="text" name="full_name" placeholder="กรุณากรอกชื่อ-นามสกุล">
+                </div>
+
+                <div class="form-group">
+                    <label>ชื่อชิ้นงาน/โครงการ</label>
+                    <input type="text" name="project_name" placeholder="กรุณากรอกชื่อชิ้นงาน">
+                </div>
+
+                <div class="form-group">
+                    <label>วันใช้งานจริง (โปรดระบุ)</label>
+                    <input type="date" name="real_use_date">
+                </div>
+
+                <div class="form-group">
+                    <label>กำหนดส่งดราฟล่วงหน้า (ส่งดราฟ 1, 2, 3)</label>
+
+                    <label>ส่งดราฟครั้งที่ 1</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="draft1" value="1_day"> 1 วัน</label>
+                        <label><input type="radio" name="draft1" value="3_days"> ล่วงหน้า 3 วัน</label>
+                        <label><input type="radio" name="draft1" value="5_days"> ล่วงหน้า 5 วัน</label>
+                        <label><input type="radio" name="draft1" value="7_days"> ล่วงหน้า 7 วัน</label>
+                    </div>
+
+                    <label>ส่งดราฟครั้งที่ 2</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="draft2" value="1_day"> 1 วัน</label>
+                        <label><input type="radio" name="draft2" value="3_days"> ล่วงหน้า 3 วัน</label>
+                        <label><input type="radio" name="draft2" value="5_days"> ล่วงหน้า 5 วัน</label>
+                        <label><input type="radio" name="draft2" value="7_days"> ล่วงหน้า 7 วัน</label>
+                    </div>
+
+                    <label>ส่งดราฟครั้งที่ 3</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="draft3" value="1_day"> 1 วัน</label>
+                        <label><input type="radio" name="draft3" value="3_days"> ล่วงหน้า 3 วัน</label>
+                        <label><input type="radio" name="draft3" value="5_days"> ล่วงหน้า 5 วัน</label>
+                        <label><input type="radio" name="draft3" value="7_days"> ล่วงหน้า 7 วัน</label>
+                    </div>
+
+                    <label>ส่งดราฟงาน (ด่วน)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="work_type" value="1_day"> 1 วัน</label>
+                        <label><input type="checkbox" name="work_type" value="3_days"> ล่วงหน้า 3 วัน</label>
+                        <label><input type="checkbox" name="work_type" value="5_days"> ล่วงหน้า 5 วัน</label>
+                        <label><input type="checkbox" name="work_type" value="7_days"> ล่วงหน้า 7 วัน</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ประเภทของงาน</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="work_type" value="โปสเตอร์"> โปสเตอร์</label>
+                        <label><input type="checkbox" name="work_type" value="แบนเนอร์"> แบนเนอร์</label>
+                        <label><input type="checkbox" name="work_type" value="โบรชัวร์"> โบรชัวร์</label>
+                        <label><input type="checkbox" name="work_type" value="โลโก้"> โลโก้</label>
+                        <label><input type="checkbox" name="work_type" value="นามบัตร"> นามบัตร</label>
+                        <label><input type="checkbox" name="work_type" value="แผ่นผับ"> แผ่นผับ</label>
+                 </div>
+                <div class="form-group">
+                    <label>ประเภทไฟล์</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="file_type" value="JPEG"> JPEG</label>
+                        <label><input type="checkbox" name="file_type" value="PNG"> PNG</label>
+                        <label><input type="checkbox" name="file_type" value="PDF"> PDF</label>
+                        <label><input type="checkbox" name="file_type" value="PowerPoint"> PowerPoint</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>รายละเอียดงาน</label>
+                    <textarea name="work_details" placeholder="กรุณาระบุรายละเอียดงาน"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>ภาพประกอบ เช่น โลโก้ รูปภาพ (โปรดแนบไฟล์)</label>
+                    <input type="file" name="work_image">
+                </div>
+
+                <div class="form-group">
+                    <label>ธีม โทนสีที่ต้องการ ฟอนต์ตัวหนังสือ (โปรดระบุ)</label>
+                    <textarea name="theme" placeholder="กรุณาระบุธีม โทนสี"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>ช่องทางการประชาสัมพันธ์</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="promotion_channel" value="ไม่ต้องประชาสัมพันธ์"> ไม่ต้องประชาสัมพันธ์</label>
+                        <label><input type="checkbox" name="promotion_channel" value="Facebook"> Facebook</label>
+                        <label><input type="checkbox" name="promotion_channel" value="Website"> Website</label>
+                        <label><input type="checkbox" name="promotion_channel" value="Line official"> Line official</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ตัวอย่างรูปแบบงาน สำหรับใช้อ้างอิง (โปรดแนบไฟล์ตัวอย่าง)</label>
+                    <input type="file" name="work_example">
+                </div>
+
+                <div class="form-group">
+                    <label>ข้อมูลเพิ่มเติม ส่งทาง Email (nopparat@jsccib.org)</label>
+                    <select name="additional_info">
+                        <option value="yes">มี</option>
+                        <option value="no">ไม่มี</option>
+                    </select>
+                </div>
+
+                <div class="form-btn">
+                    <button type="submit">สั่งงานกราฟฟิก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>ติดต่อเรา: <a href="mailto:nopparat@jsccib.org">nopparat@jsccib.org</a></p>
+    </footer>
+
+</body>
+</html>
